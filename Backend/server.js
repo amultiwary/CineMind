@@ -22,6 +22,6 @@ app.use("/api/auth", authRoutes);
 app.use("/api/tmdb", tmdbRoutes);
 app.use("/api/gemini", geminiRoutes);
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT, () => {
   console.log(`Server is running on port ${process.env.PORT || 5000}`);
 });
