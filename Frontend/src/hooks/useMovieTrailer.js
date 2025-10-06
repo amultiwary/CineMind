@@ -7,7 +7,7 @@ const useMovieTrailer = (movieId) => {
 
   const getMovieVideos = async () => {
     const data = await fetch(
-      `http://localhost:5000/api/tmdb/movie/${movieId}/videos?language=en-US`
+      `https://cinemind-98oc.onrender.com/api/tmdb/movie/${movieId}/videos?language=en-US`
     );
     const json = await data.json();
 

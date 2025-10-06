@@ -6,7 +6,7 @@ const useNowPlayingMovies = () => {
   const dispatch = useDispatch();
   const getNowPlayingMovies = async () => {
     try {
-      const data = await fetch("http://localhost:5000/api/tmdb/now_playing");
+      const data = await fetch("https://cinemind-98oc.onrender.com/api/tmdb/now_playing");
 
       const json = await data.json();
 

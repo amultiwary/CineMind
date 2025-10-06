@@ -7,7 +7,7 @@ const useUpcomingMovies = () => {
 
   const getUpcomingMovies = async () => {
     try {
-      const data = await fetch("http://localhost:5000/api/tmdb/upcoming");
+      const data = await fetch("https://cinemind-98oc.onrender.com/api/tmdb/upcoming");
       if (!data.ok) throw new Error("Network response was not ok");
 
       const json = await data.json();

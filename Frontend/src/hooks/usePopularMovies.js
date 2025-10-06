@@ -7,7 +7,7 @@ const usePopularMovies = () => {
 
   const getPopularMovies = async () => {
     try {
-      const data = await fetch("http://localhost:5000/api/tmdb/popular");
+      const data = await fetch("https://cinemind-98oc.onrender.com/api/tmdb/popular");
       if (!data.ok) throw new Error("Network response was not ok");
       const json = await data.json();
 

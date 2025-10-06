@@ -13,7 +13,7 @@ const GptSeachBar = () => {
   const handleGptSearchClick = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/gemini/gpt-search",
+        "https://cinemind-98oc.onrender.com/api/gemini/gpt-search",
         {
           userQuery: searchText.current.value,
         }

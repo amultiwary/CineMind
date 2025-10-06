@@ -25,7 +25,7 @@ const Login = () => {
       if (!isSignInForm) {
         // Register
         const res = await axios.post(
-          "http://localhost:5000/api/auth/register",
+          "https://cinemind-98oc.onrender.com/api/auth/register",
           {
             username: name.current.value,
             email: email.current.value,
@@ -36,7 +36,7 @@ const Login = () => {
         setIsSignInForm(true);
       } else {
         // Login
-        const res = await axios.post("http://localhost:5000/api/auth/login", {
+        const res = await axios.post("https://cinemind-98oc.onrender.com/api/auth/login", {
           email: email.current.value,
           password: password.current.value,
         });

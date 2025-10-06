@@ -17,7 +17,7 @@ const Body = () => {
   useEffect(() => {
     if (token) {
       axios
-        .get("http://localhost:5000/api/auth/me", {
+        .get("https://cinemind-98oc.onrender.com/api/auth/me", {
           headers: { Authorization: `Bearer ${token}` },
         })
         .then((res) => {

@@ -7,7 +7,7 @@ const useTopRatedMovies = () => {
 
   const getTopRatedMovies = async () => {
     try {
-      const data = await fetch("http://localhost:5000/api/tmdb/top_rated");
+      const data = await fetch("https://cinemind-98oc.onrender.com/api/tmdb/top_rated");
 
       const json = await data.json();
       if (!data.ok) throw new Error("Network response was not ok");
