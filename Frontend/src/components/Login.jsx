@@ -32,6 +32,7 @@ const Login = () => {
             password: password.current.value,
           }
         );
+        setErrorMessage("");
         setSuccessMessage("Signup successful! Please login.");
         setIsSignInForm(true);
       } else {
