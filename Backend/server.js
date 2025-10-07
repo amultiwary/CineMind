@@ -13,8 +13,8 @@ connectDB();
 const app = express();
 app.use(cors({
   origin: ["http://localhost:5173", "https://cine-mind-tau.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], // ✅ allow all major methods
-  credentials: true, // optional: if you need cookies or auth headers
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"], 
+  credentials: true, 
 }));
 app.use(express.json());
 
@@ -23,5 +23,5 @@ app.use("/api/tmdb", tmdbRoutes);
 app.use("/api/gemini", geminiRoutes);
 
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT || 5000}`);
+  console.log(`Server is running on port ${process.env.PORT}`);
 });
