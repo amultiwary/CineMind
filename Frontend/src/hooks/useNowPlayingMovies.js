@@ -9,6 +9,7 @@ const useNowPlayingMovies = () => {
       const data = await fetch("https://cinemind-98oc.onrender.com/api/tmdb/now_playing");
 
       const json = await data.json();
+      console.log(json);
 
       dispatch(addNowPlayingMovies(json.results));
     } catch (error) {

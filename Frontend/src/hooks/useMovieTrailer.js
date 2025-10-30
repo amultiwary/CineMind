@@ -10,6 +10,7 @@ const useMovieTrailer = (movieId) => {
       `https://cinemind-98oc.onrender.com/api/tmdb/movie/${movieId}/videos?language=en-US`
     );
     const json = await data.json();
+    console.log("json in Movie Trailer", json);
 
     if (!json?.results) {
       return null;

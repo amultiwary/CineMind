@@ -55,7 +55,7 @@ const Header = () => {
             className="py-2 px-4 mx-1 my-2 bg-purple-800 hover:bg-purple-700 transition duration-300 text-white rounded-lg"
             onClick={handleGptSearchClick}
           >
-            {showGptSearch ? "Home Page" : "GPT Search"}
+            {showGptSearch ? "Home Page" : "Search Movies"}
           </button>
           <button
             onClick={handleSignOut}

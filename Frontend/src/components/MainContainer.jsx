@@ -1,22 +1,45 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import VideoBackground from "./VideoBackground";
 import VideoTitle from "./VideoTitle";
 import ShimmerMainContainer from "./ShimmerMainContainer";
+import { setSelectedMovieId } from "../utils/movieSlice";
 
 const MainContainer = () => {
-  const movies = useSelector((store) => store.movies.nowPlayingMovies);
+  const dispatch = useDispatch();
 
-  if (!movies || movies.length === 0) return <ShimmerMainContainer />;
-  if (!movies) return;
+  const {
+    nowPlayingMovies,
+    popularMovies,
+    topRatedMovies,
+    upcomingMovies,
+    selectedMovieId,
+  } = useSelector((store) => store.movies);
 
-  const Mainmovie = movies[0];
-  if (!Mainmovie) return <Shimmer />;
-  const { original_title, overview, id } = Mainmovie;
+  // Combine all categories into one
+  const allMovies = [
+    ...(nowPlayingMovies || []),
+    ...(popularMovies || []),
+    ...(topRatedMovies || []),
+    ...(upcomingMovies || []),
+  ];
+
+  if (!allMovies.length) return <ShimmerMainContainer />;
+
+  // Find selected movie across all categories
+  const selectedMovie = allMovies.find((movie) => movie.id === selectedMovieId);
+  const movieToShow = selectedMovie || nowPlayingMovies?.[0];
+
+  if (!movieToShow) return null;
+
+  const { original_title, overview, id } = movieToShow;
+
   return (
-    <div className="pt-[30%] bg-black md:pt-0">
+    <div className="pt-[30%] bg-black md:pt-0 relative">
       <VideoTitle title={original_title} overview={overview} />
       <VideoBackground movieId={id} />
+
+     
     </div>
   );
 };

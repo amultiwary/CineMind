@@ -1,7 +1,7 @@
 import React from "react";
 import GptSeachBar from "./GptSeachBar";
 import GptMovieSuggestion from "./GptMovieSuggestion";
-import { BG_URL } from "../utils/constant";
+import bgurl from "../assets/BG_URL.jpg";
 
 const GptSearch = () => {
   return (
@@ -9,7 +9,7 @@ const GptSearch = () => {
       <div className="fixed -z-10">
         <img
           className="h-screen object-cover md:h-auto md:object-containcontain "
-          src={BG_URL}
+          src={bgurl}
           alt="CineMind logo"
         />
       </div>

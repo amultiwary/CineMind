@@ -1,15 +1,15 @@
 import { useSelector } from "react-redux";
 import useMovieTrailer from "../hooks/useMovieTrailer";
-import { useState } from "react";
-
-
+import { useEffect, useState } from "react";
 
 const VideoBackground = ({ movieId }) => {
+  console.log("movieId in VideoBackground:", movieId);
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
   const [isMuted, setIsMuted] = useState(true);
   const toggleMute = () => setIsMuted((prev) => !prev);
 
   useMovieTrailer(movieId);
+  useEffect(() => {}, [trailerVideo]);
 
   return (
     <div className="w-screen">
@@ -27,7 +27,7 @@ const VideoBackground = ({ movieId }) => {
 
       <button
         onClick={toggleMute}
-        className="relative bottom-48 left-6 bg-white/80 text-black font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-white transition"
+        className="relative bottom-48 flex  right-0 bg-white text-black font-semibold px-4 py-2 rounded-lg shadow-md hover:bg-white transition"
       >
         {isMuted ? "🔈 Unmute" : "🔇 Mute"}
       </button>

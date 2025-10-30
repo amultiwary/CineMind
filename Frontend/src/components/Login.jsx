@@ -37,10 +37,13 @@ const Login = () => {
         setIsSignInForm(true);
       } else {
         // Login
-        const res = await axios.post("https://cinemind-98oc.onrender.com/api/auth/login", {
-          email: email.current.value,
-          password: password.current.value,
-        });
+        const res = await axios.post(
+          "https://cinemind-98oc.onrender.com/api/auth/login",
+          {
+            email: email.current.value,
+            password: password.current.value,
+          }
+        );
         const { token, user } = res.data;
         localStorage.setItem("token", token);
         dispatch(addUser(user));
