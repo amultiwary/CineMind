@@ -95,13 +95,13 @@ const Login = () => {
           <input
             ref={email}
             type="email"
-            placeholder="Email Address"
+            placeholder="  Email Address"
             className="py-3 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
           />
           <input
             ref={password}
             type="password"
-            placeholder="Password"
+            placeholder="  Password"
             className="py-3 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
           />
           {errorMessage && (
