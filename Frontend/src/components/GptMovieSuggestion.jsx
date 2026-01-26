@@ -3,9 +3,13 @@ import React from "react";
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
 
+console.log(" i am in GptMovieSuggestions");
+
 const GptMovieSuggestions = () => {
   const { movieResults, movieNames } = useSelector((store) => store.gpt);
-  if (!movieNames) return <div>Loading...</div>;
+  if (!movieNames) return <div>
+     <h3 className="text-white text-center">Please wait while we load the movies...</h3>
+  </div>;
 
   return (
     <div className="p-4 m-4 bg-black text-white bg-opacity-90">

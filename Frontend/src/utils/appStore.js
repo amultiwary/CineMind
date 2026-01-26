@@ -3,6 +3,8 @@ import userReducer from "./userSlice";
 import movieReducer from "./movieSlice"; 
 import gptReducer from "./GptSlice";
 import configReducer from "./configSlice"; 
+
+console.log(" i am in appStore");
 const appStore = configureStore({
   reducer: {
     user: userReducer,

@@ -5,30 +5,20 @@ import VideoTitle from "./VideoTitle";
 import ShimmerMainContainer from "./ShimmerMainContainer";
 import { setSelectedMovieId } from "../utils/movieSlice";
 
+
+
+console.log("i am in maincontainer")
+
+
+
 const MainContainer = () => {
   const dispatch = useDispatch();
+  const nowPlayingMovies = useSelector((store) => store.movies?.nowPlayingMovies);
 
-  const {
-    nowPlayingMovies,
-    popularMovies,
-    topRatedMovies,
-    upcomingMovies,
-    selectedMovieId,
-  } = useSelector((store) => store.movies);
+  if (!nowPlayingMovies) return <ShimmerMainContainer />;
 
-  // Combine all categories into one
-  const allMovies = [
-    ...(nowPlayingMovies || []),
-    ...(popularMovies || []),
-    ...(topRatedMovies || []),
-    ...(upcomingMovies || []),
-  ];
-
-  if (!allMovies.length) return <ShimmerMainContainer />;
-
-  // Find selected movie across all categories
-  const selectedMovie = allMovies.find((movie) => movie.id === selectedMovieId);
-  const movieToShow = selectedMovie || nowPlayingMovies?.[0];
+  const movieToShow = nowPlayingMovies[0];
+   
 
   if (!movieToShow) return null;
 

@@ -4,6 +4,12 @@ import VideoBackground from "./VideoBackground";
 import { useDispatch,useSelector } from "react-redux";
 import { setSelectedMovieId } from "../utils/movieSlice";
 
+
+
+
+console.log("i am in movielist")
+
+
 const MovieList = ({ title, movies }) => {
   const dispatch = useDispatch();
   const selectedId = useSelector((state) => state.movies.selectedMovieId);

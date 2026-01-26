@@ -1,5 +1,10 @@
 import React from "react";
 
+
+
+console.log("i am in videotitle")
+
+
 const VideoTitle = ({ title, overview }) => {
   return (
     <div className="w-screen aspect-video pt-[17%] px-6 md:px-12 absolute text-white bg-gradient-to-r from-black">

@@ -6,15 +6,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import axios from "axios";
 
+console.log(" i am in Body");
+
 const Body = () => {
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
   const [isAuthChecked, setIsAuthChecked] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
+  console.log("i am in body.jsx");
   const token = localStorage.getItem("token");
 
   useEffect(() => {
+    
     if (token) {
       axios
         .get("https://cinemind-98oc.onrender.com/api/auth/me", {
@@ -46,7 +49,11 @@ const Body = () => {
     },
   ]);
 
-  if (!isAuthChecked) return null;
+  if (!isAuthChecked) return (
+    <div className="flex items-center justify-center h-screen bg-black">
+       <div className="w-16 h-16 border-4 border-red-600 border-t-transparent rounded-full animate-spin"></div>
+    </div>
+  );
 
   return (
     <div>

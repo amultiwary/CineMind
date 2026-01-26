@@ -2,6 +2,10 @@
 import React from "react";
 import { IMG_CDN_URL } from "../utils/constant";
 
+
+console.log("i am in moviecard")
+
+
 const MovieCard = ({ movieId, posterPath, onSelect }) => {
   if (!posterPath) return null;
   return (

@@ -7,12 +7,19 @@ import { BG_URL } from "../utils/constant";
 import { useNavigate } from "react-router-dom";
 import { checkValidData } from "../utils/validate";
 
+
+
+
+
+
+console.log("i am in login")
+
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [successMessage, setSuccessMessage] = useState("");
 
   const name = useRef(null);
   const email = useRef(null);
@@ -89,20 +96,20 @@ const Login = () => {
               ref={name}
               type="text"
               placeholder="Full Name"
-              className="py-3 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
+              className="py-3 px-4 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
             />
           )}
           <input
             ref={email}
             type="email"
-            placeholder="  Email Address"
-            className="py-3 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
+            placeholder="Email Address"
+            className="py-3 px-4 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
           />
           <input
             ref={password}
             type="password"
-            placeholder="  Password"
-            className="py-3 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
+            placeholder="Password"
+            className="py-3 px-3 my-3 rounded-lg w-full bg-white/30 text-white placeholder-white/70 border border-pink-300 focus:outline-none focus:ring-2 focus:ring-pink-400 transition-all"
           />
           {errorMessage && (
             <p className="text-red-400 text-sm mt-2 mb-2 text-center font-semibold animate-pulse">

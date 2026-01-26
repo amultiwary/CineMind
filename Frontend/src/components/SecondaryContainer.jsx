@@ -1,9 +1,17 @@
 import React from "react";
 import MovieList from "./MovieList";
 import { useSelector } from "react-redux";
+
+
+console.log("i am in secondarycontainer")
+
+
 const SecondaryContainer = () => {
   const movies = useSelector((store) => store.movies);
-  if (!movies) return <div>Loading...</div>;
+  console.log("movies in secondatry container ",movies);
+  if (!movies) return <div>
+     <h3 className="text-white text-center">Please wait while we load the movies...</h3>
+  </div>;
 
   return (
     movies.nowPlayingMovies && (

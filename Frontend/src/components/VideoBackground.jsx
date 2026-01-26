@@ -2,13 +2,18 @@ import { useSelector } from "react-redux";
 import useMovieTrailer from "../hooks/useMovieTrailer";
 import { useEffect, useState } from "react";
 
+
+console.log("i am in videobackground")
+
+
 const VideoBackground = ({ movieId }) => {
-  console.log("movieId in VideoBackground:", movieId);
   const trailerVideo = useSelector((store) => store.movies?.trailerVideo);
+  console.log("trailerVideo", trailerVideo);
   const [isMuted, setIsMuted] = useState(true);
   const toggleMute = () => setIsMuted((prev) => !prev);
 
   useMovieTrailer(movieId);
+  console.log("movieId", movieId);
   useEffect(() => {}, [trailerVideo]);
 
   return (
@@ -22,7 +27,7 @@ const VideoBackground = ({ movieId }) => {
           trailerVideo?.key
         }
         title="Youtube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
       ></iframe>
 
       <button

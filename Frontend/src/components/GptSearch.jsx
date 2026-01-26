@@ -3,14 +3,17 @@ import GptSeachBar from "./GptSeachBar";
 import GptMovieSuggestion from "./GptMovieSuggestion";
 import bgurl from "../assets/BG_URL.jpg";
 
+
+console.log("i am in gptsearch")
+
 const GptSearch = () => {
   return (
     <>
-      <div className="fixed -z-10">
+      <div className="fixed inset-0 -z-10">
         <img
-          className="h-screen object-cover md:h-auto md:object-containcontain "
+          className="h-full w-full object-cover"
           src={bgurl}
-          alt="CineMind logo"
+          alt="background"
         />
       </div>
       <div className="">

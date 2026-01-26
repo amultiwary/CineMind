@@ -4,6 +4,10 @@ import { useSelector, useDispatch } from "react-redux";
 import { addGptMovieResult } from "../utils/GptSlice.js";
 import axios from "axios";
 
+
+
+console.log("i am in gptsearchbar")
+
 const GptSeachBar = () => {
   const langkey = useSelector((store) => store.config.lang);
   const searchText = useRef(null);
@@ -27,19 +31,19 @@ const GptSeachBar = () => {
   };
 
   return (
-    <div className="pt-[35%] md:pt-[10%] flex justify-center relative">
+    <div className="pt-[45%] md:pt-[10%] flex justify-center relative z-0">
       <form
-        className="w-full md:w-1/2 bg-black grid grid-cols-12 items-center"
+        className="w-[95%] md:w-1/2 bg-black/90 grid grid-cols-12 rounded-lg shadow-xl overflow-hidden"
         onSubmit={(e) => e.preventDefault()}
       >
         <input
           ref={searchText}
           type="text"
-          className="p-2 m-2 col-span-9 rounded-md outline-none"
+          className="p-3 md:p-4 col-span-8 md:col-span-9 outline-none text-black bg-white focus:bg-gray-100 transition-colors"
           placeholder={lang[langkey].gptSearchPlaceholder}
         />
         <button
-          className="col-span-3 m-2 px-4 py-2 bg-red-700 text-white font-semibold rounded-md hover:bg-red-800 transition duration-300"
+          className="col-span-4 md:col-span-3 py-3 px-4 bg-red-700 hover:bg-red-800 text-white font-bold transition-all duration-300 md:text-lg text-sm"
           onClick={handleGptSearchClick}
         >
           {lang[langkey].search}
